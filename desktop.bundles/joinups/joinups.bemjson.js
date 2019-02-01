@@ -34,14 +34,15 @@ module.exports = {
 /*  ни как не выровнять по центру */
 
 	 {
-		 block: 'tpl-grid' , /* белая плашка */
+		 block: 'tpl-grid',
 		 mods: { columns: '12', align: 'center' } ,
-		 /* mix: { block: 'decorator', mods: { 'indent-l': 'xxxxxxl', 'indent-r': 'xxxxxxl' } }, */
 		 mix: { block: 'decorator', mods: { 'space-l': 'xxxxxxl', 'indent-l': 'xxxxxxl' } },
+		 /* mix: { block: 'decorator', mods: { 'indent-l': 'xxxxxxl', 'indent-r': 'xxxxxxl' } }, */
+		 /* mix: { block: 'decorator', mods: { 'space-l': 'xxxxxxl', 'indent-l': 'xxxxxxl' } }, */
 		 content: [
 			 {
 				 elem: 'fraction', /* все инпуты и контролы */
-				 elemMods: { col: '6' },
+				 elemMods: { col: '6', aligh: 'center' },
 				 content: [
 					 {
 						 block: 'pt-form',
@@ -65,6 +66,53 @@ module.exports = {
 
 							 {
 								 elem: 'item',
+								 content: [
+									 {
+										 block: 'pt-table',
+										 content: [
+											 {
+												 elem: 'row',
+												 content: [
+													 {
+														 elem: 'col',
+														 elemMods: { width: '50' },
+														 content:
+														 {
+															 block: 'text',
+															 mods: { size: 'm' },
+															 content: 'Где зарегистрирована организация'
+														 }
+													 },
+													 {
+														 elem: 'col',
+														 elemMods: { width: '50' },
+														 content:
+														 {
+															 block: 'radio-group',
+															 mods: { type: 'button', theme: 'islands', size: 'l' },
+															 val: 1,
+															 options: [
+																 {
+																	 val: 1,
+																	 text: 'В России'
+																 },
+																 {
+																	 val: 2,
+																	 text: 'За рубежем'
+																 },
+															 ]
+														 }
+													 },
+												 ]
+											 }
+										 ]
+									 }
+								 ]
+							 },
+
+							 {
+								 elem: 'item',
+								 mix: { block: 'decorator', mods: { 'indent-t': 'xxl' } },
 								 content: [
 									 {
 										 elem: 'label',
@@ -144,10 +192,6 @@ module.exports = {
 																 }
 															 }
 														 ]
-
-														 /* block: 'checkbox',
-														 mods: { type: 'button', theme: 'islands', 'space-a': 'l', size: 'm' },
-														 text: 'username@ya.ru' */
 													 }
 												 },
 												 {
