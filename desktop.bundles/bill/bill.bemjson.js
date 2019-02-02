@@ -57,7 +57,7 @@ module.exports = {
 				{
 					elem: 'card',
 					mix: [
-						{ elem: 'media', elemMods: { type: 'video' }}, 
+						{ elem: 'media', elemMods: { type: 'video' }},
 						{ block: 'decorator', mods: { 'indent-b': 'xxxxl' }}
 					],
 					content: [
@@ -66,8 +66,8 @@ module.exports = {
 						mix: [
 							{ block: 'theme', mods: { color: 'whitepaper-inverse' }},
 							{ block: 'component', mods: { whitepaper: 'inverse' }},
-							{ block: 'pt-card', mods: { view: 'default' }}, 
-							{ block: 'promo-cards', elem: 'media-video-back' }, 
+							{ block: 'pt-card', mods: { view: 'default' }},
+							{ block: 'promo-cards', elem: 'media-video-back' },
 							{ block: 'promo-cards', elem: 'hover' }
 						],
 						content: [
@@ -152,8 +152,8 @@ module.exports = {
 						mix: [
 							{ block: 'theme', mods: { color: 'whitepaper-default' }},
 							{ block: 'component', mods: { whitepaper: 'default' }},
-							{ block: 'pt-card', mods: { view: 'default' } }, 
-							{ block: 'promo-cards', elem: 'media-text-back' }, 
+							{ block: 'pt-card', mods: { view: 'default' } },
+							{ block: 'promo-cards', elem: 'media-text-back' },
 							{ block: 'promo-cards', elem: 'hover' }
 						],
 						content: [
@@ -248,7 +248,7 @@ module.exports = {
 						mix: [
 							{ block: 'theme', mods: { color: 'whitepaper-inverse' }},
 							{ block: 'component', mods: { whitepaper: 'inverse' }},
-							{ block: 'pt-card', mods: { view: 'default' } }, { block: 'promo-cards', elem: 'media-music-back' }, 
+							{ block: 'pt-card', mods: { view: 'default' } }, { block: 'promo-cards', elem: 'media-music-back' },
 							{ block: 'promo-cards', elem: 'hover' }
 						],
 						content: [
@@ -861,7 +861,7 @@ module.exports = {
 					mix: [
 						{ block: 'theme', mods: { color: 'whitepaper-inverse' }},
 						{ block: 'component', mods: { whitepaper: 'inverse' }},
-						{ elem: 'apps', elemMods: { type: 'developer' }}, 
+						{ elem: 'apps', elemMods: { type: 'developer' }},
 						{ block: 'decorator', mods: { 'indent-b': 'xxxxl' } }
 					],
 					content: [
@@ -991,8 +991,8 @@ module.exports = {
 						mix: [
 							{ block: 'theme', mods: { color: 'whitepaper-inverse' }},
 							{ block: 'component', mods: { whitepaper: 'inverse' }},
-							{ block: 'pt-card', mods: { view: 'inverse' } }, 
-							{ block: 'promo-cards', elem: 'apps-recommendation-back' }, 
+							{ block: 'pt-card', mods: { view: 'inverse' } },
+							{ block: 'promo-cards', elem: 'apps-recommendation-back' },
 							{ block: 'promo-cards', elem: 'hover' }
 						],
 						content: [
@@ -1045,7 +1045,7 @@ module.exports = {
 						{
 							elem: 'item',
 							mix: [
-								{ block: 'pt-card', elem: 'footer', elemMods: { 'space-a': 'xl', distribute: 'between' } },  
+								{ block: 'pt-card', elem: 'footer', elemMods: { 'space-a': 'xl', distribute: 'between' } },
 								{ block: 'promo-cards', elem: 'apps-recommendation-footer' }, { block: 'pt-card', elem: 'item' }
 							],
 							content: [
@@ -1089,8 +1089,8 @@ module.exports = {
 						mix: [
 							{ block: 'theme', mods: { color: 'whitepaper-inverse' }},
 							{ block: 'component', mods: { whitepaper: 'inverse' }},
-							{ block: 'pt-card', mods: { view: 'default' }}, 
-							{ block: 'promo-cards', elem: 'apps-good-back' }, 
+							{ block: 'pt-card', mods: { view: 'default' }},
+							{ block: 'promo-cards', elem: 'apps-good-back' },
 							{ block: 'promo-cards', elem: 'hover' }
 						],
 						content: [
@@ -1398,7 +1398,7 @@ module.exports = {
 								{ block: 'theme', mods: { color: 'whitepaper-default' }},
 								{ block: 'component', mods: { whitepaper: 'default' }},
 								{ block: 'pt-card', elem: 'content', elemMods: { 'space-h': 'l' }}
-							],	
+							],
 							content: [
 							{
 								elem: 'project-countdowns',
@@ -1708,6 +1708,6 @@ module.exports = {
 			}]
 		}
 		/* /DONATE */
-		
+
 	]
 };
