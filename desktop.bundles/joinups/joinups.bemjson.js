@@ -27,22 +27,23 @@ module.exports = {
 
 	 {
 		 block: 'logo-yandex-checkout', /* сделать выравнивание */
-		 mods: { align: 'center' },
-		 mix: { block: 'decorator', mods: { 'indent-t': 'xxxxxl', 'indent-b': 'xxxxxl' } },
+		 /* mods: { align: 'center' }, */
+		 mix: { block: 'joinups-card', block: 'decorator', mods: { 'indent-t': 'xxxxxl', 'indent-b': 'xxxxxl' } },
 	 },
 
 /*  ни как не выровнять по центру */
 
 	 {
 		 block: 'tpl-grid',
-		 mods: { columns: '12', align: 'center' } ,
-		 mix: { block: 'decorator', mods: { 'space-l': 'xxxxxxl', 'indent-l': 'xxxxxxl' } },
+		 mods: { columns: '12', align: 'center' },
+		 mix: { block: 'joinups-card' },
+		 /* mix: { block: 'decorator', mods: { 'space-l': 'xxxxxxl', 'indent-l': 'xxxxxxl' } }, */
 		 /* mix: { block: 'decorator', mods: { 'indent-l': 'xxxxxxl', 'indent-r': 'xxxxxxl' } }, */
 		 /* mix: { block: 'decorator', mods: { 'space-l': 'xxxxxxl', 'indent-l': 'xxxxxxl' } }, */
 		 content: [
 			 {
 				 elem: 'fraction', /* все инпуты и контролы */
-				 elemMods: { col: '6', aligh: 'center' },
+				 elemMods: { col: '6' },
 				 content: [
 					 {
 						 block: 'pt-form',
@@ -90,6 +91,7 @@ module.exports = {
 														 {
 															 block: 'radio-group',
 															 mods: { type: 'button', theme: 'islands', size: 'l' },
+															 mix: { block: 'decorator', mods: { 'indent-l': 'm', 'indent-r': 'm' } },
 															 val: 1,
 															 options: [
 																 {
@@ -287,10 +289,14 @@ module.exports = {
 }, /* закрывает pt-card */
 
 {
+	block: 'item',
+	mix: { block: 'decorator', mods: { 'indent-t': 'xxxxxl' }},
+	content: [{
 	block: 'text',
-	mix: { block: 'decorator', mods: { 'indent-t': 'xxxxxl' } },
+	mix: { block: 'theme', mods: { color: 'whitepaper-alert' }},
 	mods: { view: 'link', size: 's', align: 'center' },
 	content: 'Помощь        Ru        © 2019 ООО НКО «Яндекс.Деньги»'
+}]
 }
 
 
