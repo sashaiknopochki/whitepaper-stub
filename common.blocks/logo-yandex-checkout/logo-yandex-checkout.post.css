@@ -3,4 +3,7 @@
 	width: 152px;
 	height: 32px;
  	background: url('/assets/joinups/yandex-checkout-logo.svg');
+	display: flex;
+  align-items: center;
+  justify-content: center;
 }
