@@ -1,15 +1,15 @@
 module.exports = {
 	block: 'page',
-	title: 'joinups',
+	title: 'joinups-foreign',
 	favicon: '/favicon.ico',
 	lang: 'ru',
 	head: [
 		{ elem: 'meta', attrs: { name: 'description', content: '' } },
 		{ elem: 'meta', attrs: { name: 'viewport', content: 'width=device-width, initial-scale=1' } },
-		{ elem: 'css', url: 'joinups.min.css' },
+		{ elem: 'css', url: 'joinups-foreign.min.css' },
 		{ elem: 'js', url: 'https://code.jquery.com/jquery-3.2.1.js' },
 	],
-	scripts: [{ elem: 'js', url: 'joinups.min.js' }],
+	scripts: [{ elem: 'js', url: 'joinups-foreign.min.js' }],
 	mods: { theme: 'islands' },
 	mix: [
 		{
@@ -104,7 +104,7 @@ module.exports = {
 															 name: 'location',
 															 mods: { type: 'button', theme: 'islands', size: 'm' },
 															 /* mix: { block: 'decorator', mods: { 'indent-l': 'm', 'indent-r': 'm' } }, */
-															 val: 1,
+															 val: 2,
 															 options: [
 																 {
 																	 val: 1,
@@ -125,7 +125,8 @@ module.exports = {
 							 },
 
 /* Контент меняющийся в зависимости от выбранного чек-бокса */
-					{
+
+/*					{
 						 elem: 'form-russian',
 						 name: 'form__form-russian',
 						 mix: { block: 'decorator', mods: { 'indent-t': 'xxl' } },
@@ -143,7 +144,7 @@ module.exports = {
 										 mix: { block: 'decorator', mods: { 'indent-t': 'xs' } },
 										 content: {
 											 block: 'input',
-											 mods: { width: 'available', 'has-clear': true, 'focused': true, theme: 'islands', size: 'm', 'indent-v': 'xl', 'indent-h': 'xxxl' }, /* indent-v не сработали */
+											 mods: { width: 'available', 'has-clear': true, 'focused': true, theme: 'islands', size: 'm', 'indent-v': 'xl', 'indent-h': 'xxxl' },
 											 name: 'company__name',
 											 autocomplete: 'Boolean',
 											 placeholder: 'Введите название компании или ИНН',
@@ -157,22 +158,19 @@ module.exports = {
 								 mix: { block: 'decorator', mods: { 'indent-t': 's' } },
 								 content: [
 									 {
-										 tag: 'a',
-										 attrs: { href: 'https://money.yandex.ru/quickpay/' },
 										 block: 'text',
 										 mods: { size: 'm', view: 'link'},
-										 /* url: 'https://money.yandex.ru/quickpay/', */
 										 content: 'У меня нет ИП или юрлица'
 									 }
 								 ]
 							 },
 						 ]
-					 },
+					 }, */
 /* form_russian closes */
 
 
 /* form_foreign opens */
-				/*	{
+					{
 						elem: 'form-foreign',
 						name: 'form__form-foreign',
 						mix: { block: 'decorator', mods: { 'indent-t': 'xxl' } },
@@ -283,12 +281,12 @@ module.exports = {
 										]
 									}, /* Тип организации */
 
-/*
+
 
 								]
 							}
 						]
-					}, */
+					},
 
 
 /* Статичный контент  */
