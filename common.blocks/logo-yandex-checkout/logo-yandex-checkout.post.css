@@ -1,9 +1,15 @@
+.checkout-page {
+	display: flex;
+	justify-content: center;
+}
 .logo-yandex-checkout {
-	margin-left: 640px;
+	/* margin-left: 640px; */
+	/* margin-left: auto; */
+	/* margin-right: auto; */
 	width: 152px;
 	height: 32px;
  	background: url('/assets/joinups/yandex-checkout-logo.svg');
-	display: flex;
-  align-items: center;
-  justify-content: center;
+	/* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
 }

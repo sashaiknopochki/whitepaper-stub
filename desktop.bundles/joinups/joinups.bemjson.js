@@ -13,6 +13,9 @@ module.exports = {
 	mods: { theme: 'islands' },
 	mix: [
 		{
+			block: 'checkout-page'
+		},
+		{
 			block: 'theme',
 			mods: { color: 'whitepaper-default', space: 'default', size: 'default',
 			gap: 'small', menu: 'default', breakpoint: 'default', font: 'museo' }
@@ -20,36 +23,41 @@ module.exports = {
 		{
 			block: 'component',
 			mods: { whitepaper: 'default' }
-		},
+		}
 	],
 
 	content: [
-
 	 {
 		 block: 'logo-yandex-checkout', /* сделать выравнивание */
 		 /* mods: { align: 'center' }, */
-		 mix: { block: 'joinups-card', block: 'decorator', mods: { 'indent-t': 'xxxxxl', 'indent-b': 'xxxxxl' } },
+		 mix: { block: 'decorator', mods: { 'indent-t': 'xxxxxl', 'indent-b': 'xxxxxl' } },
 	 },
-
 /*  ни как не выровнять по центру */
 
 	 {
-		 block: 'tpl-grid',
-		 mods: { columns: '12', align: 'center' },
-		 mix: { block: 'joinups-card' },
-		 /* mix: { block: 'decorator', mods: { 'space-l': 'xxxxxxl', 'indent-l': 'xxxxxxl' } }, */
-		 /* mix: { block: 'decorator', mods: { 'indent-l': 'xxxxxxl', 'indent-r': 'xxxxxxl' } }, */
-		 /* mix: { block: 'decorator', mods: { 'space-l': 'xxxxxxl', 'indent-l': 'xxxxxxl' } }, */
+		 block: 'joinups-card',
+		 /* mods: { columns: '12' }, */
+		 /* mix: { block: 'joinups-card' }, */
 		 content: [
 			 {
-				 elem: 'fraction', /* все инпуты и контролы */
-				 elemMods: { col: '6' },
+				 elem: 'form', /* все инпуты и контролы */
+				 /* elemMods: { col: '6' }, */
 				 content: [
 					 {
 						 block: 'pt-form',
 						 mods: { view: 'default' },
 						 mix: { block: 'decorator', mods: { 'space-a': 'xxxl' } },
 						 content: [
+							 {
+								 elem: 'title',
+								 content: [
+									 {
+										 block: 'text',
+										 mods: { size: 'xxl', weight: 'bold'},
+										 content: 'Подключение'
+									 }
+								 ]
+							 },
 							 /* {
 								 elem: 'item',
 								 elemMods: { 'space-v': 'xs', distribute: 'default', 'vertical-align': 'center' },
@@ -66,7 +74,8 @@ module.exports = {
 							 }, */
 
 							 {
-								 elem: 'item',
+								 elem: 'organization-location',
+								 mix: { block: 'decorator', mods: { 'indent-t': 'l' } },
 								 content: [
 									 {
 										 block: 'pt-table',
@@ -90,9 +99,10 @@ module.exports = {
 														 content:
 														 {
 															 block: 'radio-group',
-															 mods: { type: 'button', theme: 'islands', size: 'l' },
-															 mix: { block: 'decorator', mods: { 'indent-l': 'm', 'indent-r': 'm' } },
-															 val: 1,
+															 name: 'location',
+															 mods: { type: 'button', theme: 'islands', size: 'm' },
+															 /* mix: { block: 'decorator', mods: { 'indent-l': 'm', 'indent-r': 'm' } }, */
+															 val: 2,
 															 options: [
 																 {
 																	 val: 1,
@@ -100,7 +110,7 @@ module.exports = {
 																 },
 																 {
 																	 val: 2,
-																	 text: 'За рубежем'
+																	 text: 'За рубежем',
 																 },
 															 ]
 														 }
@@ -112,17 +122,19 @@ module.exports = {
 								 ]
 							 },
 
+/* Контент меняющийся в зависимости от выбранного чек-бокса */
+					{
+						 elem: 'form-russian',
+						 name: 'form__form-russian',
+						 mix: { block: 'decorator', mods: { 'indent-t': 'xxl' } },
+						 content: [
 							 {
 								 elem: 'item',
-								 mix: { block: 'decorator', mods: { 'indent-t': 'xxl' } },
 								 content: [
 									 {
-										 elem: 'label',
-										 content: {
-											 block: 'text',
-											 mods: { size: 'm' },
-											 content: 'Название компании или ИНН',
-										 }
+										 elem: 'text',
+										 mods: { size: 'm' },
+										 content: 'Название компании или ИНН',
 									 },
 									 {
 										 elem: 'control',
@@ -138,9 +150,8 @@ module.exports = {
 									 }
 								 ]
 							 },
-
 							 {
-								 elem: 'item',
+								 elem: 'organization-no',
 								 mix: { block: 'decorator', mods: { 'indent-t': 's' } },
 								 content: [
 									 {
@@ -151,9 +162,136 @@ module.exports = {
 									 }
 								 ]
 							 },
+						 ]
+					 },
+/* form_russian closes */
+
+
+/* form_foreign opens */
+					{
+						elem: 'form-foreign',
+						name: 'form__form-foreign',
+						mix: { block: 'decorator', mods: { 'indent-t': 'xxl' } },
+						content: [
+							{
+								block: 'pt-table',
+								content: [
+									{
+										elem: 'row',
+										content: [
+											{
+												elem: 'col',
+												elemMods: { width: '50' },
+												content:
+												{
+													block: 'text',
+													mods: { size: 'm', },
+													content: 'Страна'
+												}
+											},
+											{
+												elem: 'col',
+												elemMods: { width: '50' },
+												content:
+												{
+													block: 'control',
+													content: {
+														block: 'select',
+														mods: {
+															mode: 'radio',
+															theme: 'islands',
+															size: 'm',
+															width: 'available'
+														},
+														name: 'select_country',
+														val: 2,
+														options: [
+															{
+																val: 1,
+																text: 'Выбрать страну'
+															},
+															{
+																val: 2,
+																text: 'Абхазия'
+															},
+															{
+																val: 3,
+																text: 'Австралия'
+															},
+															{
+																val: 4,
+																text: 'Австрия'
+															},
+															{
+																val: 5,
+																text: 'Азербайджан'
+															},
+															{
+																val: 6,
+																text: 'Аландские острова'
+															},
+														]
+													}
+												}
+											},
+										]
+									},
+
+									{
+										block: 'pt-table',
+										mix: { block: 'decorator', mods: { 'indent-t': 'm' } },
+										content: [
+											{
+												elem: 'row',
+												content: [
+													{
+														elem: 'col',
+														elemMods: { width: '50' },
+														content:
+														{
+															block: 'text',
+															mods: { size: 'm' },
+															content: 'Тип организации'
+														}
+													},
+													{
+														elem: 'col',
+														elemMods: { width: '50' },
+														content:
+														{
+															block: 'radio-group',
+															mods: { type: 'button', theme: 'islands', size: 'm' },
+															/* mix: { block: 'decorator', mods: { 'indent-l': 'm', 'indent-r': 'm' } }, */
+															val: 1,
+															options: [
+																{
+																	val: 1,
+																	text: 'Юрлицо'
+																},
+																{
+																	val: 2,
+																	text: 'ИП',
+																},
+															]
+														}
+													},
+												]
+											}
+										]
+									}, /* Тип организации */
+
+
+
+								]
+							}
+						]
+					},
+
+
+/* Статичный контент  */
 
 							 {
-								 elem: 'item',
+								 elem: 'select-accout-title',
 								 mix: { block: 'decorator', mods: { 'indent-t': 'xxxl', 'indent-b': 'xl' } },
 								 content: {
 									 block: 'text',
@@ -163,7 +301,7 @@ module.exports = {
 							 },
 
 							 {
-								 elem: 'item',
+								 elem: 'select-accout-options',
 								 content: {
 									 block: 'pt-table',
 									 content: [
@@ -233,17 +371,18 @@ module.exports = {
 							 },
 
 							 {
-								 elem: 'item',
+								 elem: 'button-main',
 								 mix: { block: 'decorator', mods: { 'indent-t': 'xxl' } },
 								 content: {
 										 block: 'button',
+										 id: 'continue',
 										 mods: { theme: 'islands', width: 'available', view: 'action', size: 'l' },
 										 text: 'Продолжить'
 									 }
 								 },
 
 								 { /* нижняя ссылка на карточке, просто text, link блоки не заработали почему-то  */
-									 elem: 'item',
+									 elem: 'agreement',
 									 content:
 									 {
 										 block: 'pt-table',
@@ -289,7 +428,7 @@ module.exports = {
 }, /* закрывает pt-card */
 
 {
-	block: 'item',
+	block: 'footer_links',
 	mix: { block: 'decorator', mods: { 'indent-t': 'xxxxxl' }},
 	content: [{
 	block: 'text',
